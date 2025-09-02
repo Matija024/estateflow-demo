@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* EstateFlow Design System - Professional PropTech UI
+All colors MUST be HSL for consistency.
+*/
+
+@layer base {
+  :root {
+    /* Core Background & Text */
+    --background: 220 20% 97%;
+    --foreground: 220 15% 15%;
+
+    /* Cards & Surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 15%;
+
+    /* Interactive Elements */
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 15%;
+
+    /* Primary - Estate Blue */
+    --primary: 224 76% 48%;
+    --primary-foreground: 0 0% 100%;
+    --primary-muted: 224 50% 85%;
+
+    /* Secondary - Warm Gray */
+    --secondary: 220 15% 95%;
+    --secondary-foreground: 220 15% 25%;
+
+    /* Muted States */
+    --muted: 220 15% 96%;
+    --muted-foreground: 220 10% 45%;
+
+    /* Accent - Success Green */
+    --accent: 142 76% 36%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Status Colors */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* UI Elements */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 224 76% 48%;
+
+    /* Design Tokens */
+    --radius: 0.75rem;
+    --shadow-sm: 0 1px 3px hsl(220 15% 15% / 0.1);
+    --shadow-md: 0 4px 12px hsl(220 15% 15% / 0.1);
+    --shadow-lg: 0 10px 25px hsl(220 15% 15% / 0.15);
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(224 76% 48%), hsl(224 76% 56%));
+    --gradient-success: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 44%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 15% 98%));
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Sidebar Theme */
+    --sidebar-background: 220 20% 99%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode with softer estate theme */
+    --background: 220 25% 6%;
+    --foreground: 220 15% 90%;
+
+    --card: 220 25% 8%;
+    --card-foreground: 220 15% 90%;
+
+    --popover: 220 25% 8%;
+    --popover-foreground: 220 15% 90%;
+
+    --primary: 224 76% 55%;
+    --primary-foreground: 220 25% 6%;
+    --primary-muted: 224 50% 25%;
+
+    --secondary: 220 20% 12%;
+    --secondary-foreground: 220 15% 85%;
+
+    --muted: 220 20% 10%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 142 76% 42%;
+    --accent-foreground: 220 25% 6%;
+
+    --success: 142 76% 42%;
+    --warning: 38 92% 60%;
+    --destructive: 0 84% 65%;
+
+    --border: 220 20% 18%;
+    --input: 220 20% 15%;
+    --ring: 224 76% 55%;
+
+    --shadow-sm: 0 1px 3px hsl(220 25% 0% / 0.3);
+    --shadow-md: 0 4px 12px hsl(220 25% 0% / 0.3);
+    --shadow-lg: 0 10px 25px hsl(220 25% 0% / 0.4);
+
+    --sidebar-background: 220 25% 4%;
+    --sidebar-foreground: 220 15% 85%;
+    --sidebar-primary: 224 76% 55%;
+    --sidebar-primary-foreground: 220 25% 6%;
+    --sidebar-accent: 220 20% 10%;
+    --sidebar-accent-foreground: 220 15% 85%;
+    --sidebar-border: 220 20% 15%;
+    --sidebar-ring: 224 76% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Custom scrollbar for EstateFlow */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground;
+  }
+}
+
+@layer components {
+  /* EstateFlow Component Utilities */
+  .estate-card {
+    @apply bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300;
+  }
+  
+  .estate-gradient {
+    background: var(--gradient-primary);
+  }
+  
+  .estate-gradient-success {
+    background: var(--gradient-success);
+  }
+  
+  .estate-gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+}
